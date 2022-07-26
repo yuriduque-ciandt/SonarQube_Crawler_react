@@ -27,10 +27,11 @@ const RepoCard: React.FC<ComponentProps> = ({ repo }) => {
   const formatLabel = (label: string) => label.split('_').join(' ');
 
   const getQualityDirection = (measure: RepoMeasure) => {
-    if (measure.bestValue) {
-      return <FaArrowAltCircleUp size={24} color="green" />;
+    const color = measure.bestValue ? 'green' : 'red';
+    if (measure.direction > 0) {
+      return <FaArrowAltCircleUp size={24} color={color} />;
     }
-    return <FaArrowAltCircleDown size={24} color="red" />;
+    return <FaArrowAltCircleDown size={24} color={color} />;
   };
 
   return (
