@@ -5,7 +5,8 @@ const theme = {
   colors: {
     black: '#262626',
     text: '#444',
-    background: '#f3f3f3'
+    background: '#f3f3f3',
+    border: '#c4c4c4'
   },
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {

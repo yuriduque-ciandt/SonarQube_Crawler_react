@@ -27,11 +27,10 @@ const RepoCard: React.FC<ComponentProps> = ({ repo }) => {
   const formatLabel = (label: string) => label.split('_').join(' ');
 
   const getQualityDirection = (measure: RepoMeasure) => {
-    const color = measure.bestValue ? 'green' : 'red';
-    if (measure.direction > 0) {
-      return <FaArrowAltCircleUp size={24} color={color} />;
+    if (measure.bestValue) {
+      return <FaArrowAltCircleUp size={24} color="green" />;
     }
-    return <FaArrowAltCircleDown size={24} color={color} />;
+    return <FaArrowAltCircleDown size={24} color="red" />;
   };
 
   return (
@@ -113,6 +112,7 @@ const MetricContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 10px;
 `;
 
 const MetricGraphContent = styled.div`
@@ -140,7 +140,7 @@ const MetricStats = styled.div`
   }
   b {
     color: black;
-    font-size: 18px;
+    font-size: 22px;
     margin-right: 10px;
   }
   p {

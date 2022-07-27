@@ -22,7 +22,7 @@ const StyledInput = styled.div`
   padding-left: 10px;
 
   background-color: white;
-  border: 1px solid #c4c4c4;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 5px;
 
   svg {
